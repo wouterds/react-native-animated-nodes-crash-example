@@ -14,7 +14,8 @@ export const createStyles = (isDarkMode: boolean) => {
   return StyleSheet.create({
     container,
     content: {
-      padding: 16,
+      paddingHorizontal: 16,
+      paddingVertical: 32,
     },
   });
 };
