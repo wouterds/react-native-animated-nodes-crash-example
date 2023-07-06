@@ -5,7 +5,7 @@ import {styles} from './styles';
 import {formatDistanceToNowStrict} from 'date-fns';
 
 // in milliseconds
-const UPDATE_INTERVAL = 1000;
+const UPDATE_INTERVAL = 250;
 
 const numberBetween = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
