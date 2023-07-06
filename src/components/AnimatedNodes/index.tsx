@@ -4,6 +4,9 @@ import {Text, View} from 'react-native';
 import {styles} from './styles';
 import {formatDistanceToNowStrict} from 'date-fns';
 
+// in milliseconds
+const INTERVAL = 250;
+
 const AnimatedNodes = () => {
   const startTime = useRef(new Date()).current;
   const uniqueId = useRef(
@@ -14,7 +17,7 @@ const AnimatedNodes = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setNodes(nodes + 1);
-    }, 1000);
+    }, INTERVAL);
 
     return () => {
       clearTimeout(timeout);
