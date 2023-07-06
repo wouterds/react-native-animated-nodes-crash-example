@@ -26,7 +26,7 @@ const AnimatedNodes = () => {
 
   const randomNodes = useMemo(() => {
     return Math.ceil(
-      Math.max(Math.min(Math.random() * nodes, nodes * 0.8), nodes * 0.2),
+      Math.max(Math.min(Math.random() * nodes, nodes * 0.3), nodes * 0.1),
     );
   }, [nodes]);
 
