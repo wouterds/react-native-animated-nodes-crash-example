@@ -12,7 +12,8 @@
   "dependencies": {
     "date-fns": "^2.30.0",
     "react": "18.2.0",
-    "react-native": "0.72.1"
+    "react-native": "0.72.1",
+    "react-native-shimmer-placeholder": "^2.0.9"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
