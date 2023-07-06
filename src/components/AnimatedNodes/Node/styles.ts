@@ -9,5 +9,6 @@ export const styles = StyleSheet.create({
     width: 18,
     height: 18,
     borderRadius: 4,
+    overflow: 'hidden',
   },
 });
