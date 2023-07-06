@@ -13,6 +13,7 @@
     "date-fns": "^2.30.0",
     "react": "18.2.0",
     "react-native": "0.72.1",
+    "react-native-linear-gradient": "^2.7.3",
     "react-native-shimmer-placeholder": "^2.0.9"
   },
   "devDependencies": {
