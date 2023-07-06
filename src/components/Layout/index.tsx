@@ -1,11 +1,6 @@
 import React, {useMemo} from 'react';
 import type {ReactNode} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
+import {ScrollView, useColorScheme} from 'react-native';
 
 import {createStyles} from './styles';
 
@@ -19,11 +14,7 @@ const Layout = ({children}: Props) => {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <StatusBar
-        translucent
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-      />
-      <SafeAreaView>{children}</SafeAreaView>
+      {children}
     </ScrollView>
   );
 };

@@ -1,13 +1,19 @@
 import React from 'react';
-
-import Layout from './components/Layout';
-import AnimatedNodes from './components/AnimatedNodes';
+import RootNavigation from './navigation/RootNavigation';
+import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import {styles} from './styles';
 
 const App = () => {
+  const isDarkMode = useColorScheme() === 'dark';
+
   return (
-    <Layout>
-      <AnimatedNodes />
-    </Layout>
+    <SafeAreaView style={styles.container}>
+      <StatusBar
+        translucent
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+      />
+      <RootNavigation />
+    </SafeAreaView>
   );
 };
 
