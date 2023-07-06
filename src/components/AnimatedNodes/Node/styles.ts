@@ -1,20 +1,26 @@
 import {StyleSheet, ViewStyle} from 'react-native';
+import {AnimatedNodeTheme} from '.';
+import {COLOR_BLUE, COLOR_YELLOW} from '../../../styles';
 
 type Props = {
-  alt?: boolean;
+  theme: AnimatedNodeTheme;
 };
 
-export const createStyles = ({alt}: Props) => {
+export const createStyles = ({theme}: Props) => {
   const box: ViewStyle = {
-    backgroundColor: '#61dafb',
+    backgroundColor: '#999',
     width: 18,
     height: 18,
     borderRadius: 4,
     overflow: 'hidden',
   };
 
-  if (alt) {
-    box.backgroundColor = '#f1c40f';
+  if (theme === AnimatedNodeTheme.Blue) {
+    box.backgroundColor = COLOR_BLUE;
+  }
+
+  if (theme === AnimatedNodeTheme.Yellow) {
+    box.backgroundColor = COLOR_YELLOW;
   }
 
   return StyleSheet.create({

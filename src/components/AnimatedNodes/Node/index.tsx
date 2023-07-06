@@ -3,12 +3,17 @@ import {View} from 'react-native';
 import {createStyles} from './styles';
 import Shimmer from '../../Shimmer';
 
+export enum AnimatedNodeTheme {
+  Blue = 'blue',
+  Yellow = 'yellow',
+}
+
 type Props = {
-  alt?: boolean;
+  theme: AnimatedNodeTheme.Blue | AnimatedNodeTheme.Yellow;
 };
 
-const AnimatedNode = ({alt}: Props) => {
-  const styles = useMemo(() => createStyles({alt}), [alt]);
+const AnimatedNode = ({theme}: Props) => {
+  const styles = useMemo(() => createStyles({theme}), [theme]);
 
   return (
     <View style={styles.container}>

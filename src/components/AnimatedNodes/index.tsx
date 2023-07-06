@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
-import AnimatedNode from './Node';
+import AnimatedNode, {AnimatedNodeTheme} from './Node';
 import {Text, View} from 'react-native';
 import {styles} from './styles';
 import {formatDistanceToNowStrict} from 'date-fns';
@@ -16,7 +16,7 @@ const AnimatedNodes = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setNodes(Math.ceil(nodes + nodes * 0.1));
+      setNodes(nodes + 1);
     }, INTERVAL);
 
     return () => {
@@ -34,18 +34,26 @@ const AnimatedNodes = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.text}>
-          Elapsed time: {formatDistanceToNowStrict(startTime)}
+          elapsed time: {formatDistanceToNowStrict(startTime)}
         </Text>
         <Text style={styles.text}>
-          nodes: {nodes}, random: {randomNodes}
+          nodes: {nodes + randomNodes} (
+          <Text style={styles.blueText}>{nodes}</Text>,{' '}
+          <Text style={styles.yellowText}>{randomNodes}</Text>)
         </Text>
       </View>
       <View style={styles.nodes}>
         {Array.from(Array(nodes).keys()).map(node => (
-          <AnimatedNode key={`animated-nodes:${uniqueId}.node:${node}`} />
+          <AnimatedNode
+            key={`animated-nodes:${uniqueId}.node:${node}`}
+            theme={AnimatedNodeTheme.Blue}
+          />
         ))}
         {Array.from(Array(randomNodes).keys()).map(node => (
-          <AnimatedNode key={`animated-nodes:${uniqueId}.node:${node}`} alt />
+          <AnimatedNode
+            key={`animated-nodes:${uniqueId}.node:${node}`}
+            theme={AnimatedNodeTheme.Yellow}
+          />
         ))}
       </View>
     </View>
