@@ -5,7 +5,11 @@ import {styles} from './styles';
 import {formatDistanceToNowStrict} from 'date-fns';
 
 // in milliseconds
-const INTERVAL = 1000;
+const UPDATE_INTERVAL = 1000;
+
+const numberBetween = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
 const AnimatedNodes = () => {
   const startTime = useRef(new Date()).current;
@@ -17,7 +21,7 @@ const AnimatedNodes = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setNodes(nodes + 1);
-    }, INTERVAL);
+    }, UPDATE_INTERVAL);
 
     return () => {
       clearTimeout(timeout);
@@ -25,9 +29,7 @@ const AnimatedNodes = () => {
   }, [nodes]);
 
   const randomNodes = useMemo(() => {
-    return Math.ceil(
-      Math.max(Math.min(Math.random() * nodes, nodes * 0.3), nodes * 0.1),
-    );
+    return Math.ceil(numberBetween(nodes * 0.1, nodes * 0.3));
   }, [nodes]);
 
   return (
