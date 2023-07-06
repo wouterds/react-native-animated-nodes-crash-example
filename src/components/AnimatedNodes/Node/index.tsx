@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {View} from 'react-native';
-import {styles} from './styles';
+import {createStyles} from './styles';
 import Shimmer from '../../Shimmer';
 
-const AnimatedNode = () => {
+type Props = {
+  alt?: boolean;
+};
+
+const AnimatedNode = ({alt}: Props) => {
+  const styles = useMemo(() => createStyles({alt}), [alt]);
+
   return (
     <View style={styles.container}>
       <View style={styles.box}>
