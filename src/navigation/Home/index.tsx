@@ -7,20 +7,20 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../RootNavigation';
 import {styles} from './styles';
 
-const Home = () => {
+const HomeScreen = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
     <Layout>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Screen')}
+        onPress={() => navigation.navigate('Detail')}
         style={styles.button}>
-        <Text style={styles.buttonLabel}>Open screen</Text>
+        <Text style={styles.buttonLabel}>Push Detail Screen</Text>
       </TouchableOpacity>
       <AnimatedNodes />
     </Layout>
   );
 };
 
-export default Home;
+export default HomeScreen;

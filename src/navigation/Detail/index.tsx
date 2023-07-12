@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedNodes from '../../components/AnimatedNodes';
 import Layout from '../../components/Layout';
 
-const Screen = () => {
+const DetailScreen = () => {
   return (
     <Layout>
       <AnimatedNodes />
@@ -10,4 +10,4 @@ const Screen = () => {
   );
 };
 
-export default Screen;
+export default DetailScreen;
