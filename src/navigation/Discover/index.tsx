@@ -4,12 +4,12 @@ import Layout from '../../components/Layout';
 import {Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {MainStackParamList} from '../RootNavigation';
+import {DiscoverStackParamList} from '../RootNavigation';
 import {styles} from './styles';
 
-const HomeScreen = () => {
+const DiscoverScreen = () => {
   const navigation =
-    useNavigation<NativeStackNavigationProp<MainStackParamList>>();
+    useNavigation<NativeStackNavigationProp<DiscoverStackParamList>>();
 
   return (
     <Layout>
@@ -23,4 +23,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default DiscoverScreen;

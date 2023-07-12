@@ -5,7 +5,7 @@ import {ScrollView, useColorScheme} from 'react-native';
 import {createStyles} from './styles';
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const Layout = ({children}: Props) => {
@@ -14,7 +14,7 @@ const Layout = ({children}: Props) => {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {children}
+      {children || null}
     </ScrollView>
   );
 };
